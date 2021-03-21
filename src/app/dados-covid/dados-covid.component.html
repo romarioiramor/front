@@ -1,0 +1,63 @@
+<div class="jumbotron">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" >Cidade</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="cidade" (ngModelChange)='onChangeCidade($event)' >
+    <option value="" selected [ngValue]="">Select District/City</option>
+      <option *ngFor="let country of dados.cidades" [ngValue]="country" >{{ country }}</option>
+    </select>
+  </div>
+
+
+  <div class="input-group mb-3" *ngIf="cidade">
+    <div class="input-group-prepend">
+      <label class="input-group-text" >Data</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="data">
+     <option *ngFor="let country of dados.datas" [ngValue]="country" >{{ country }}</option>
+     </select>
+  </div>
+
+  <div class="botoes">
+
+    <a type="button" class="btn btn-success" (click)="filtrar()">Filtrar</a>
+
+    <a type="button" href="home" class="btn btn-secondary">Voltar</a>
+
+  </div>
+
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Casos confirmados</th>
+          <th scope="col">Casos do dia</th>
+          <th scope="col">Óbitos do dia</th>
+          <th scope="col">Óbitos acumulados</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="cidade">
+        <tr *ngFor="let dado of dados.dados[cidade]">
+          <td>{{ dado.data }}</td>
+          <td>{{ dado.casosConfirmados}}</td>
+          <td>{{ dado.casosDia}}</td>
+          <td>{{ dado.obitosDia}}</td>
+          <td>{{ dado.obitosTotal}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+<div class="container" >
+<h2>Casos confirmados</h2>
+  <div class="grafico">
+    <canvas #casosConfirmados></canvas>
+  </div>
+</div>
+

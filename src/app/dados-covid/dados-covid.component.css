@@ -1,0 +1,16 @@
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.jumbotron {
+  margin: 5vh;
+  min-width: 600px;
+}
+
+table {
+  text-align: center;
+}
+
