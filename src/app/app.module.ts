@@ -6,15 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DadosCovidComponent } from './dados-covid/dados-covid.component';
-import { GraficoComponent } from './grafico/grafico.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DadosCovidComponent,
-    GraficoComponent
+    DadosCovidComponent
   ],
   imports: [
     BrowserModule,

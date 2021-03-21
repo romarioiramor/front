@@ -14,8 +14,6 @@ export class DadosCovidComponent implements OnInit {
   public cidade: any
   public data: any
 
-
-
   constructor(private service: ConfigService) {
     this.dados =  {
       datas: [],
@@ -31,7 +29,6 @@ export class DadosCovidComponent implements OnInit {
     this.cidade = UpdatedValue;
     this.buildGraphs(this.dados.dados[this.cidade] )
   }
-
 
   ngOnInit() {
 
@@ -69,8 +66,6 @@ export class DadosCovidComponent implements OnInit {
         backgroundColor: [],
         data: []
     };
-
-
 
     data.map(value => {
 
