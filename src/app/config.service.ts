@@ -10,12 +10,12 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<any> {
-    const url = "http://localhost:3000/database"
+    const url = "https://minha-api-covid.herokuapp.com/database"
     return this.http.get<any>(url)
   }
 
   getDados(): Observable<any> {
-    const url = "http://localhost:3000/database"
+    const url = "https://minha-api-covid.herokuapp.com/database"
     return this.http.get<any>(url)
   }
 
